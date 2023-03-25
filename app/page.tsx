@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { Press_Start_2P } from "next/font/google";
 import "nes.css/css/nes.min.css";
+
+import styles from "./page.module.css";
 
 const pressStart2P = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
@@ -25,15 +26,7 @@ export default function Home() {
 	return (
 		<div className={pressStart2P.className}>
 			<div
-				className="is-dark nes-container"
-				style={{
-					height: "100vh",
-					width: "100vw",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					flexDirection: "column",
-				}}
+				className={["is-dark", "nes-container"].concat(styles['complete-container']).join(' ')}
 			>
 				<main
 					style={{
@@ -54,8 +47,8 @@ export default function Home() {
 							})}
 							.
 						</h1>
-						<h1>
-							<span className="nes-text">
+						<h1 className={["nes-text"].concat(styles['year-complete']).join(' ')}>
+							<span>
 								The year {new Date().getFullYear()} is{" "}
 								<span className="nes-text is-success">{percent}</span> complete.
 							</span>
