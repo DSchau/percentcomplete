@@ -79,6 +79,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+
+  background-color: #212529; /* From NesCSS Dark Mode */
   /* background: linear-gradient(
       to bottom,
       transparent,
